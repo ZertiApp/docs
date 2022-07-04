@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div  markdown="1">
 # Vote.sol
 
 For each Vote contract, users are able to create a "Voting Pool" and to determine if the entity in question should be considered as such. Each vote has its time limit,  minimum votes and voting cost required. It is important to consider that results are given by majority and that each clone of the Vote contract acts independentely.
@@ -104,6 +94,3 @@ function sendVote(uint8 _userVote) external payable IsInit CanVote {
 * ### [Matias Arazi](https://github.com/MatiArazi)
 * ### [Lucas Grasso](https://github.com/LucasGrasso)
 ---
-    </div>
-</body>
-</html>
