@@ -103,12 +103,16 @@ Get entity that is being voted.
 
 ### Returns:
 * address of entity being voted
+
+
 ---
 ### getTotalDeposit()
 Get contract balance
 
 ### Returns:
 * uint256, balance of the contract(IN GWEI).
+
+
 ---
 ### getUserVoted(address _addr)
 Check if address has already voted
@@ -118,36 +122,48 @@ Check if address has already voted
 
 ### Returns:
 * boolean value stating if selected address has already voted.
+
+
 ---
 ### getInit()
 Check if contract is initialized
 
 ### Returns:
 * boolean value stating if contract is initiliazed
+
+
 ---
 ### getVotesAgainst()
 Check against votes
 
 ### Returns:
 * uint256, number of votes against.
+
+
 ---
 ### getVotesInFavour()
 Check in favour votes
 
 ### Returns:
 * uint256, number of votes in favour.
+
+
 ---
 ### getVotingCost()
 get voting cost, if 0, voting closed
 
 ### Returns: 
 * uint256, neccesary ethers to stake/vote(IN GWEI)
+
+
 ---
 ### getEndTime()
 Get endTime timestamp(Unix Time)
 
 ### Returns:
 * uint256, block.timestamp at init + timeToVote days.
+
+
 ---
 ## _Internal Functions_
 ### __voteFinalization()__
