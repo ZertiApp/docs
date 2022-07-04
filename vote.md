@@ -33,6 +33,7 @@ When a vote finishes, the pool is distributed based on majoritarian vote. This s
 
     emited at voteFinalization()(See voteFinalization())
 ---
+
 # Methods:
 
 ### __initialize(uint256 \_votingCost, uint256 \_minVotes, uint256 \_timeToVote, address \_sender)__
