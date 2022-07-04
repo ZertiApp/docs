@@ -1,5 +1,3 @@
-## [Back to menu](/index.html)
-
 # VoteFactory.sol
 
 We will be calling acaemic institutes and/or enterprises wishing to emit certificates entities. When one of such postulates as one, it interacts with the VoteFactory contract, which uses an upgradeable EIP1167 implementation, creating a clone of the Vote contract.
