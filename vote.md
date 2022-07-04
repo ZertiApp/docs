@@ -194,7 +194,6 @@ function distributePool(
 ```
 
 ---
-###
 # Zerti
 * ### [Matias Arazi](https://github.com/MatiArazi)
 * ### [Lucas Grasso](https://github.com/LucasGrasso)
