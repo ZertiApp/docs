@@ -1,12 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 #items {
   gap: 10px;
 }
 
-#nav {
-  margin-bottom: 50px;
-}
-
-body {
+#mainBody {
   padding-left: 10%;
   padding-right: 10%;
+  display: grid;
+  place-items: center;
+  height: 100%;
 }
