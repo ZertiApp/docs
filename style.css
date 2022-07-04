@@ -1,0 +1,12 @@
+#items {
+  gap: 10px;
+}
+
+#nav {
+  margin-bottom: 50px;
+}
+
+body {
+  padding-left: 10%;
+  padding-right: 10%;
+}
