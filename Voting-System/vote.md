@@ -1,3 +1,9 @@
+---
+layout: default
+title: Vote.sol
+nav_order: 5
+---
+
 # Vote.sol
 
 For each Vote contract, users are able to create a "Voting Pool" and to determine if the entity in question should be considered as such. Each vote has its time limit,  minimum votes and voting cost required. It is important to consider that results are given by majority and that each clone of the Vote contract acts independentely.
