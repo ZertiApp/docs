@@ -12,9 +12,9 @@ Each postulations has it own Vote.sol instance.
 * Implements a time-lock function, restricting function calls when block.timestamp at call exceeds timeToVote
 * At vote finish, distributes the pool according to majoritarian vote.
 
-![VotingPoolPattern](https://user-images.githubusercontent.com/66641667/175523913-0492bb02-2f5b-4c83-a5d6-2e5a9e12f1a9.png)
+![ZertiVotingPoolPattern](/static/img/VotingPoolPattern.png)
 __Voting Pool:__ Stake-ish MATIC (ethers) pool formed by the tokens sent by Users. It is distributed based on majoritarian vote, generating a reward system for people in order to incentivate entity verification.
-![DistributePoolPattern](https://user-images.githubusercontent.com/66641667/175523873-1a9dae75-0776-4e97-956e-279b123273ec.png)
+![ZertiDistributePoolPattern](/static/img/DistributePoolPattern.png)
 When a vote finishes, the pool is distributed based on majoritarian vote. This system's sole objective is to incentivate entity verification for the community.
 
 # Events

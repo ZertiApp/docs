@@ -10,7 +10,7 @@ We will be calling acaemic institutes and/or enterprises wishing to emit certifi
 * Devs can interact with the View Methods to retrieve information about the current state of the contract.
 * Admin should interact with VoteFactory to change contract state. 
 
-![ProxyPattern](https://user-images.githubusercontent.com/66641667/175523951-94a143a4-f573-4abb-a994-4a047ba0dc5d.png)
+![ZertiProxyPattern](/static/img/ProxyPattern.png)
 
 # Events
 

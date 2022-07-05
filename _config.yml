@@ -1,11 +1,25 @@
 title: Zerti | Docs
+description: Documentation for the Smart Contracts of the Zerti Project. 
+url: "https://docs.zerti.com.ar"
 remote_theme: just-the-docs/just-the-docs
 
-search:
-  # Split pages into sections that can be searched individually
-  # Supports 1 - 6, default: 2
-  heading_level: 6
-
+# Footer content
 footer_content: "2022 Zerti <a href=\"https://zerti.com.ar\">-Go to the app</a>
 <br>All of our contracts are open-source and under the MIT License.<br>
 Matias Arazi & Lucas Grasso Ramos"
+
+
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%b %e %Y at %I:%M %p"
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
