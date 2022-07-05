@@ -56,6 +56,8 @@ When a vote finishes, the pool is distributed based on majoritarian vote. This s
 
 # __Methods__
 
+## __Main Functions:__
+
 ### initialize(uint256 \_votingCost, uint256 \_minVotes, uint256 \_timeToVote, address \_sender)
 
 __Params:__
@@ -118,7 +120,7 @@ function sendVote(uint8 _userVote) external payable IsInit CanVote {
 }
 ```
 ---
-## View and Info-Retrieving functions
+## __View and Info-Retrieving functions:__
 ### getWhoBeingVoted()
 Get entity that is being voted.
 
@@ -186,7 +188,7 @@ __Returns:__
 
 
 ---
-## _Internal Functions_
+## __Internal Functions:__
 ### voteFinalization()
 
 Sets vote result and calls distributeVotePool() function

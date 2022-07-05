@@ -57,6 +57,8 @@ We will be calling acaemic institutes and/or enterprises wishing to emit certifi
 ---
 # __Methods:__
 
+## __Main Functions:__
+
 ### createVote(uint256 votingCost, uint256 minVotes, uint256 timeToVote)
 
 __Params:__
@@ -116,7 +118,7 @@ function rePostulationAllowance() public payable {
 }
 ```
 ---
-## _View and info-retrieving methods_
+## __View and info-retrieving functions:__
 ### getImplAddr()
 
 Get the current implementation Address
@@ -174,7 +176,7 @@ function hasPostulated(address _addr) external view returns (bool) {
 }
 ```
 ---
-## _Admin methods_  
+## __Admin methods:__  
 ### changeImpl(address \_newVoteImpl)
 
 __Params:__ 
