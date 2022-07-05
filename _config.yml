@@ -5,3 +5,6 @@ search:
   # Split pages into sections that can be searched individually
   # Supports 1 - 6, default: 2
   heading_level: 6
+
+footer_content: "2022 Zerti <a href=\"https://zerti.com.ar\">-Go to the app</a>
+<br>All of our contracts are open-source and under the MIT License."

@@ -4,5 +4,3 @@ Zerti is a Web3 based project whose objective is to secure the validity and trus
 ## The docs
 Here you will find usefull information about the contracts at use and their methods, events, and usage.  
 
-footer_content: "2022 Zerti <a href=\"https://zerti.com.ar/">-Go to the app</a>
-<br>All of our contracts are open-source and under the MIT License."
