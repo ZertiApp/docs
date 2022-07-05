@@ -188,5 +188,3 @@ function changeAlowanceValue(uint256 _newValue) external payable onlyAdmin {
     reAlowanceValue = _newValue;
 }
 ```
----
-
