@@ -142,7 +142,7 @@ function getAdmin() external view returns (address) {
 }
 ```
 ---
-### isEntity(\_addr)
+### isEntity(address \_addr)
 
 Check if a given address is a validated entity.
 
