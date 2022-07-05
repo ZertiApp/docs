@@ -31,61 +31,49 @@ We will be calling acaemic institutes and/or enterprises wishing to emit certifi
 
 ![ZertiProxyPattern](/static/img/ProxyPattern.png)
 
-# Events
+# __Events__
 
 * ### EthReceived
-    * ### Params:
+    * __Params:__
         * __address indexed \_sender__
         * __uint256 \_amount__
-    {: .no_toc }
 
     
-    Emited at fallback function.
+    _Emited at fallback function._
+    
 * ### EntityAdded
-    * ### Params:
+    * __Params:__
         * __address indexed \_newEntity__ -> New validated entity
         * __address \_caledBy__ -> Contract(VoteProxy) that called the function.
-    {: .no_toc }
 
+    _Emited at Vote finish, from a Vote clone, if result if 1._
 
-    Emited at Vote finish, from a Vote clone, if result if 1.
 * ### ProxyCreated
-    * ### Params:
+    * __Params:__
         * __address indexed proxy__ -> Address of the newly created vote clone/instance.
-
-    {: .no_toc }
     
-    Emited at Vote cloning.
+    _Emited at Vote cloning._
 
 ---
-# Methods:
+# __Methods:__
 ## _Entity-related methods_
 ### __createVote(uint256 votingCost, uint256 minVotes, uint256 timeToVote)__
 
-### Params: 
+__Params:__
 * __votingCost:__ should be N usd, info gathered in the front-end
 * __minVotes:__ minimal votes to win votation
 * __timeToVote:__ days to vote, should be at least N days.
 
-{: .no_toc }
-
-
-### Returns:
+__Returns:__
 * A boolean value indicating whether the operation succeeded.
-
-{: .no_toc }
-
 
 Can be called by everyone.
 Creates an instance of the vote proxy contract and emits a {ProxyCreated} event, then initializes the Clone/Proxy.
 Entities call this function at postulation.
 
-### Reverts on:
+__Reverts on:__
 * Invalid input: _votingCost == 0 or _minVotes < 2 or _timeToVote < 2
 * msg.sender already postulated
-
-{: .no_toc }
-
 
 ```solidity
 function createVote(
@@ -113,12 +101,9 @@ function createVote(
 Allows entity to repostulate. If entity sends especified amount of ethers to the function, it is allowed to iniciate a new vote.
 Entity should not be validated(lost at previous votation).
 
-### Reverts on:
+__Reverts on:__
 * Call by an already validated entity.
 * msg.value != reAlowanceValue
-
-{: .no_toc }
-
 
 ```solidity
 function rePostulationAllowance() public payable {
@@ -135,11 +120,8 @@ function rePostulationAllowance() public payable {
 ### __getImplAddr()__
 
 Get the current implementation Address
-### Returns: 
+__Returns:__
 * address of the Vote contract from which clones are created.
-
-{: .no_toc }
-
 
 ```solidity
 function getImplAddr() external view returns (address) {
@@ -151,11 +133,8 @@ function getImplAddr() external view returns (address) {
 ### __getAdmin()__
 
 Get the current administrator Address
-### Returns: 
+__Returns:__ 
 * address of contract admin.
-
-{: .no_toc }
-
 
 ```solidity
 function getAdmin() external view returns (address) {
@@ -167,16 +146,11 @@ function getAdmin() external view returns (address) {
 
 Check if a given address is a validated entity.
 
-### Params:
+__Params:__
 * __\_addr__ address of the entity to be queried.
 
-{: .no_toc }
-
-### Returns: 
+__Returns:__ 
 * Boolean value stating if address is a validated entity.  
-
-{: .no_toc }
-
 
 ```solidity
 function isEntity(address _addr) external view returns (bool) {
@@ -188,16 +162,11 @@ ___
 
 Check if a given address has postulated.
 
-### Params:
+__Params:__
 * __\_addr__ address of the entity to be queried.
 
-{: .no_toc }
-
-### Returns: 
+__Returns:__
 * Boolean value stating if address has postulated.
-
-{: .no_toc }
-
 
 ```solidity
 function hasPostulated(address _addr) external view returns (bool) {
@@ -205,22 +174,19 @@ function hasPostulated(address _addr) external view returns (bool) {
 }
 ```
 ---
-## _Admin methods_
+## _Admin methods_  
 ### __changeImpl(address \_newVoteImpl)__
 
-### Params: 
+__Params:__ 
 * __\_newVoteImpl__ address of the new Vote implementation
 
-{: .no_toc }
 
 
 Only callable by Admin.  
 Changes the address from which vote contracts are cloned.
 
-### Reverts on:
+__Reverts on:__
 * Call by everyone if not Admin.
-
-{: .no_toc }
 
 
 ```solidity
@@ -231,21 +197,17 @@ function changeImpl(address _newVoteImpl) public onlyAdmin {
 ---
 ### __changeAlowanceValue(uint256 \_newValue)__
 
-### Params: 
+__Params:__
 * __\_newValue__ new amount to pay when repostulating.
-
-{: .no_toc }
-
 
 Only callable by Admin.  
 _newValue should be parsed as GWEI.  
 Changes the value of reAlowanceValue.
 
-### Reverts on:
+__Reverts on:__
 * call by everyone if not Admin.
 * '_newValue' equal to cero or equal to previous value.
 
-{: .no_toc }
 
 
 ```solidity

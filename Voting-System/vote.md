@@ -5,6 +5,18 @@ nav_order: 5
 ---
 
 # Vote.sol
+{: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+---
 
 For each Vote contract, users are able to create a "Voting Pool" and to determine if the entity in question should be considered as such. Each vote has its time limit,  minimum votes and voting cost required. It is important to consider that results are given by majority and that each clone of the Vote contract acts independentely.
 Each postulations has it own Vote.sol instance.
@@ -23,36 +35,36 @@ __Voting Pool:__ Stake-ish MATIC (ethers) pool formed by the tokens sent by User
 ![ZertiDistributePoolPattern](/static/img/DistributePoolPattern.png)
 When a vote finishes, the pool is distributed based on majoritarian vote. This system's sole objective is to incentivate entity verification for the community.
 
-# Events
+# __Events__
 
 * ### UserVoted
-    * ### Params:
+    * __Params:__
         * __address indexed userAddr__ --> address of the voter
         * __uint8 vote__ --> (0- Vote Against ; 1-Vote in Favour)
 
-    Emmited at each sendVote() call (See sendVote())
+    _Emmited at each sendVote() call (See sendVote())._
 
 * ### VoteFinished
-    * ### Params:
+    * __Params:__
         * __address indexed entity__ --> address of the entity being voted
         * __uint8 vote__ --> (0- Vote lost, entity is not validated ; 1- Vote win, entity is now validated and can emit certificates)
 
-    emited at voteFinalization()(See voteFinalization())
+    _emited at voteFinalization()(See voteFinalization())._
 
     
 ---
 
-# Methods
+# __Methods__
 
 ### __initialize(uint256 \_votingCost, uint256 \_minVotes, uint256 \_timeToVote, address \_sender)__
 
-### Params: 
+__Params:__
 * __votingCost:__ should be N usd, info gathered in the front-end
 * __minVotes:__ minimal votes to win votation
 * __timeToVote:__ days to vote, should be at least N days.
 * __\_sender:__ entity to be verified.
 
-### Reverts on:
+__Reverts on:__
 * Already initialized at call
 * Call by everyone, if not VoteFactory.
 
@@ -78,10 +90,10 @@ function initialize(
 ---
 ### __sendVote(uint8 \_userVote)__
 
-### Params:
+__Params:__
 * __\_userVote:__ users vote obtained in front-end. 1 - In favor vote; 0 - Opposing vote.
 
-### Reverts on:
+__Reverts on:__
 * msg.value not equal to votingCost.
 * msg.sender already voted.
 * Not initialized
@@ -110,7 +122,7 @@ function sendVote(uint8 _userVote) external payable IsInit CanVote {
 ### getWhoBeingVoted()
 Get entity that is being voted.
 
-### Returns:
+__Returns:__
 * address of entity being voted
 
 
@@ -118,7 +130,7 @@ Get entity that is being voted.
 ### getTotalDeposit()
 Get contract balance
 
-### Returns:
+__Returns:__
 * uint256, balance of the contract(IN GWEI).
 
 
@@ -126,10 +138,10 @@ Get contract balance
 ### getUserVoted(address _addr)
 Check if address has already voted
 
-### Params: 
+__Params:__
 * __\_addr__ address to check.
 
-### Returns:
+__Returns:__
 * boolean value stating if selected address has already voted.
 
 
@@ -137,7 +149,7 @@ Check if address has already voted
 ### getInit()
 Check if contract is initialized
 
-### Returns:
+__Returns:__
 * boolean value stating if contract is initiliazed
 
 
@@ -145,7 +157,7 @@ Check if contract is initialized
 ### getVotesAgainst()
 Check against votes
 
-### Returns:
+__Returns:__
 * uint256, number of votes against.
 
 
@@ -153,7 +165,7 @@ Check against votes
 ### getVotesInFavour()
 Check in favour votes
 
-### Returns:
+__Returns:__
 * uint256, number of votes in favour.
 
 
@@ -161,7 +173,7 @@ Check in favour votes
 ### getVotingCost()
 get voting cost, if 0, voting closed
 
-### Returns: 
+__Returns:__
 * uint256, neccesary ethers to stake/vote(IN GWEI)
 
 
@@ -169,7 +181,7 @@ get voting cost, if 0, voting closed
 ### getEndTime()
 Get endTime timestamp(Unix Time)
 
-### Returns:
+__Returns:__
 * uint256, block.timestamp at init + timeToVote days.
 
 
@@ -185,6 +197,9 @@ Emits a {VoteFinished} event; and calls distributePool().
 ### distributePool()
 Transfers ether to vote winners.
 Distributes reward system pool between winners(majority).  
+
+__Reverts On:__
+* Vote finish
 
 ``` solidity
 function distributePool(
