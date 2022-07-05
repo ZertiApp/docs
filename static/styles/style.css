@@ -1,0 +1,27 @@
+body{
+    margin-right: 25%;
+}
+.syne{
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.2rem, 2vw, 2.2rem);
+}
+
+.dmSans {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
+}
+
+.dmMono{
+    font-family: 'DM Mono', monospace;
+    font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+}
+
+#Home {
+    margin-bottom: 20px;
+}
+#title {
+    margin-bottom: 35px;
+}
+.lead {
+    margin-bottom: 50px;
+}
