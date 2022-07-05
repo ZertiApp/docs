@@ -1,2 +1,7 @@
-title: Zerti
+title: Zerti | Docs
 remote_theme: just-the-docs/just-the-docs
+
+search:
+  # Split pages into sections that can be searched individually
+  # Supports 1 - 6, default: 2
+  heading_level: 6
