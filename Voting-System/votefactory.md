@@ -56,8 +56,8 @@ We will be calling acaemic institutes and/or enterprises wishing to emit certifi
 
 ---
 # __Methods:__
-## _Entity-related methods_
-### __createVote(uint256 votingCost, uint256 minVotes, uint256 timeToVote)__
+
+### createVote(uint256 votingCost, uint256 minVotes, uint256 timeToVote)
 
 __Params:__
 * __votingCost:__ should be N usd, info gathered in the front-end
@@ -96,7 +96,7 @@ function createVote(
 ```
 ---
 
-### __rePostulationAllowance()__
+### rePostulationAllowance()
 
 Allows entity to repostulate. If entity sends especified amount of ethers to the function, it is allowed to iniciate a new vote.
 Entity should not be validated(lost at previous votation).
@@ -117,7 +117,7 @@ function rePostulationAllowance() public payable {
 ```
 ---
 ## _View and info-retrieving methods_
-### __getImplAddr()__
+### getImplAddr()
 
 Get the current implementation Address
 __Returns:__
@@ -130,7 +130,7 @@ function getImplAddr() external view returns (address) {
 ```
 
 ---
-### __getAdmin()__
+### getAdmin()
 
 Get the current administrator Address
 __Returns:__ 
@@ -142,7 +142,7 @@ function getAdmin() external view returns (address) {
 }
 ```
 ---
-### __isEntity(\_addr)__
+### isEntity(\_addr)
 
 Check if a given address is a validated entity.
 
@@ -158,7 +158,7 @@ function isEntity(address _addr) external view returns (bool) {
 }
 ```
 ___
-### __getPostulated(address \_addr)__
+### getPostulated(address \_addr)
 
 Check if a given address has postulated.
 
@@ -175,12 +175,10 @@ function hasPostulated(address _addr) external view returns (bool) {
 ```
 ---
 ## _Admin methods_  
-### __changeImpl(address \_newVoteImpl)__
+### changeImpl(address \_newVoteImpl)
 
 __Params:__ 
 * __\_newVoteImpl__ address of the new Vote implementation
-
-
 
 Only callable by Admin.  
 Changes the address from which vote contracts are cloned.
@@ -195,7 +193,7 @@ function changeImpl(address _newVoteImpl) public onlyAdmin {
 }
 ```
 ---
-### __changeAlowanceValue(uint256 \_newValue)__
+### changeAlowanceValue(uint256 \_newValue)
 
 __Params:__
 * __\_newValue__ new amount to pay when repostulating.

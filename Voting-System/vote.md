@@ -56,7 +56,7 @@ When a vote finishes, the pool is distributed based on majoritarian vote. This s
 
 # __Methods__
 
-### __initialize(uint256 \_votingCost, uint256 \_minVotes, uint256 \_timeToVote, address \_sender)__
+### initialize(uint256 \_votingCost, uint256 \_minVotes, uint256 \_timeToVote, address \_sender)
 
 __Params:__
 * __votingCost:__ should be N usd, info gathered in the front-end
@@ -88,7 +88,7 @@ function initialize(
 }
 ```
 ---
-### __sendVote(uint8 \_userVote)__
+### sendVote(uint8 \_userVote)
 
 __Params:__
 * __\_userVote:__ users vote obtained in front-end. 1 - In favor vote; 0 - Opposing vote.
@@ -187,19 +187,22 @@ __Returns:__
 
 ---
 ## _Internal Functions_
-### __voteFinalization()__
+### voteFinalization()
 
 Sets vote result and calls distributeVotePool() function
 
 internal and should only be called by an Admin contract.
 Emits a {VoteFinished} event; and calls distributePool().
 
+__Reverts On:__
+* Voting not finished
+
 ### distributePool()
 Transfers ether to vote winners.
 Distributes reward system pool between winners(majority).  
 
 __Reverts On:__
-* Vote finish
+* Voting not finished
 
 ``` solidity
 function distributePool(
