@@ -31,6 +31,7 @@ We will be calling acaemic institutes and/or enterprises wishing to emit certifi
         * __address indexed proxy__ -> Address of the newly created vote clone/instance.
     
     Emited at Vote cloning.
+
 ---
 # Methods:
 ## _Entity-related methods_
@@ -49,7 +50,7 @@ Creates an instance of the vote proxy contract and emits a {ProxyCreated} event,
 Entities call this function at postulation.
 
 ### Reverts on:
-* Invalid input(_votingCost == 0 || _minVotes < 2 || _timeToVote < 2)
+* Invalid input: _votingCost == 0 or _minVotes < 2 or _timeToVote < 2
 * msg.sender already postulated
 
 ```solidity

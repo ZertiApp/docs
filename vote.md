@@ -32,6 +32,8 @@ When a vote finishes, the pool is distributed based on majoritarian vote. This s
         * __uint8 vote__ --> (0- Vote lost, entity is not validated ; 1- Vote win, entity is now validated and can emit certificates)
 
     emited at voteFinalization()(See voteFinalization())
+
+    
 ---
 
 # Methods
