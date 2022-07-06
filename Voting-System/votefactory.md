@@ -77,25 +77,6 @@ __Reverts on:__
 * Invalid input: _votingCost == 0 or _minVotes < 2 or _timeToVote < 2
 * msg.sender already postulated
 
-```solidity
-function createVote(
-    uint256 _votingCost,
-    uint256 _minVotes,
-    uint256 _timeToVote
-) public payable {
-    address _voteProxy = this.deployMinimal(voteImpl);
-
-    Vote(_voteProxy).initialize(
-        _votingCost,
-        _minVotes,
-        _timeToVote,
-        msg.sender
-    );
-
-    postulations[msg.sender] = true;
-    clones[_voteProxy] = true;
-}
-```
 ---
 
 ### rePostulationAllowance()
@@ -107,16 +88,6 @@ __Reverts on:__
 * Call by an already validated entity.
 * msg.value != reAlowanceValue
 
-```solidity
-function rePostulationAllowance() public payable {
-    if(postulations[msg.sender] && entities[msg.sender])
-        revert AlreadySelectedAsEntity(msg.sender);
-    if(msg.value != reAlowanceValue)
-        revert InvalidInput(msg.value);
-    
-    postulations[msg.sender] = false;
-}
-```
 ---
 ## __View and info-retrieving functions:__
 ### getImplAddr()
@@ -125,12 +96,6 @@ Get the current implementation Address
 __Returns:__
 * address of the Vote contract from which clones are created.
 
-```solidity
-function getImplAddr() external view returns (address) {
-    return voteImpl;
-}
-```
-
 ---
 ### getAdmin()
 
@@ -138,11 +103,6 @@ Get the current administrator Address
 __Returns:__ 
 * address of contract admin.
 
-```solidity
-function getAdmin() external view returns (address) {
-    return admin;
-}
-```
 ---
 ### isEntity(address \_addr)
 
@@ -152,13 +112,8 @@ __Params:__
 * __\_addr__ address of the entity to be queried.
 
 __Returns:__ 
-* Boolean value stating if address is a validated entity.  
+* Boolean value stating if address is a validated entity. 
 
-```solidity
-function isEntity(address _addr) external view returns (bool) {
-    return entities[_addr];
-}
-```
 ___
 ### getPostulated(address \_addr)
 
@@ -170,11 +125,6 @@ __Params:__
 __Returns:__
 * Boolean value stating if address has postulated.
 
-```solidity
-function hasPostulated(address _addr) external view returns (bool) {
-    return postulations[_addr];
-}
-```
 ---
 ## __Admin methods:__  
 ### changeImpl(address \_newVoteImpl)
@@ -188,12 +138,6 @@ Changes the address from which vote contracts are cloned.
 __Reverts on:__
 * Call by everyone if not Admin.
 
-
-```solidity
-function changeImpl(address _newVoteImpl) public onlyAdmin {
-    voteImpl = _newVoteImpl;
-}
-```
 ---
 ### changeAlowanceValue(uint256 \_newValue)
 
@@ -207,13 +151,3 @@ Changes the value of reAlowanceValue.
 __Reverts on:__
 * call by everyone if not Admin.
 * '_newValue' equal to cero or equal to previous value.
-
-
-
-```solidity
-function changeAlowanceValue(uint256 _newValue) external payable onlyAdmin {
-    if(_newValue == reAlowanceValue || _newValue == 0)
-        revert InvalidInput(_newValue);
-    reAlowanceValue = _newValue;
-}
-```

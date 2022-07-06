@@ -18,11 +18,13 @@ nav_order: 5
 
 ---
 
-For each Vote contract, users are able to create a "Voting Pool" and to determine if the entity in question should be considered as such. Each vote has its time limit,  minimum votes and voting cost required. It is important to consider that results are given by majority and that each clone of the Vote contract acts independentely.
-Each postulations has it own Vote.sol instance.
+For each Vote contract, users are able to create a "Voting Pool" and to determine if the entity in question should be considered as such. Each vote has its time limit,  minimum votes and voting cost required. It is important to consider that results are given by majority and that each clone of the Vote contract acts independentely. Stores an IPFS URI that contains entity info(see Data)
+
+Each entity postulation has it own Vote.sol instance.
 
 * Implements the DAO Voting System.
 * Implements the Voting-Pool Reward System.
+* Stores data in a IPFS link.
 * Users(voters) interact with cloned instances(See VoteFactory.sol) of this contract.
 * Can be upgraded via VoteFactory(See VoteFactory.sol).
 * Calls _addEntity(See VoteFactory.sol) if result is 1(True/In favour).
@@ -42,14 +44,14 @@ When a vote finishes, the pool is distributed based on majoritarian vote. This s
         * __address indexed userAddr__ --> address of the voter
         * __uint8 vote__ --> (0- Vote Against ; 1-Vote in Favour)
 
-    _Emmited at each sendVote() call (See sendVote())._
+    _Emmited at each sendVote() call (See sendVote)._
 
 * ### VoteFinished
     * __Params:__
         * __address indexed entity__ --> address of the entity being voted
         * __uint8 vote__ --> (0- Vote lost, entity is not validated ; 1- Vote win, entity is now validated and can emit certificates)
 
-    _emited at voteFinalization()(See voteFinalization())._
+    _emited at voteFinalization()(See voteFinalization)._
 
     
 ---
@@ -73,22 +75,6 @@ __Reverts on:__
 
 init function, given that cloned contracts cant have constructors. Only callable by VoteFactory contract. Only callable once(It is like a constructor)
 
-```solidity
-function initialize(
-    uint256 _votingCost,
-    uint256 _minVotes,
-    uint256 _timeToVote,
-    address _sender
-) external {
-    if (msg.sender != VOTEFACTORY || isInitialized)
-        revert CantInit(msg.sender);
-    isInitialized = true;
-    votingCost = _votingCost * 1 ether;
-    minVotes = _minVotes;
-    endTime = block.timestamp + (_timeToVote * 1 days);
-    sender = _sender;
-}
-```
 ---
 ### sendVote(uint8 \_userVote)
 
@@ -108,17 +94,6 @@ Receives ether and stores user's vote and address in tree structure.
 Sets that user has voted.  
 Emits a {UserVoted} event.
 
-```solidity
-function sendVote(uint8 _userVote) external payable IsInit CanVote {
-    if (msg.value != votingCost || _userVote >= 2 || voted[msg.sender])
-        revert InvalidVote();
-
-    voters[_userVote].push(msg.sender);
-    voted[msg.sender] = true;
-
-    emit UserVoted(msg.sender, _userVote);
-}
-```
 ---
 ## __View and Info-Retrieving functions:__
 ### getWhoBeingVoted()
@@ -126,6 +101,14 @@ Get entity that is being voted.
 
 __Returns:__
 * address of entity being voted
+
+---
+### getData()
+Get IPFS Link to entity info.
+(See Metadata-Standards)
+
+__Returns:__
+* string, IPFS Link.
 
 
 ---
@@ -205,20 +188,3 @@ Distributes reward system pool between winners(majority).
 
 __Reverts On:__
 * Voting not finished
-
-``` solidity
-function distributePool(
-    uint256 _amount,
-    address[] memory _votersResult,
-    uint256 _resultLen
-) internal IsInit {
-    if (votingCost != 0 || block.timestamp < endTime)
-        revert VotingNotEnded(); 
-    for (uint256 i = 0; i < _resultLen; ) {
-        payable(_votersResult[i]).transfer(_amount);
-        unchecked {
-            ++i;
-        }
-    }
-```
-
