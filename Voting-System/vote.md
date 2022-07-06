@@ -2,6 +2,7 @@
 layout: default
 title: Vote.sol
 nav_order: 5
+parent: Voting System
 ---
 
 # Vote.sol

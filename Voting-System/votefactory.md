@@ -2,6 +2,7 @@
 layout: default
 title: VoteFactory.sol
 nav_order: 5
+parent: Voting System
 ---
 
 # VoteFactory.sol
