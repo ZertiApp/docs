@@ -165,7 +165,7 @@ __Returns:__
 
 ---
 ### getEndTime()
-Get endTime timestamp(Unix Time)
+Get endTime timestamp(In Unix Time!)
 
 __Returns:__
 * uint256, block.timestamp at init + timeToVote days.
