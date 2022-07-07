@@ -22,33 +22,36 @@ parent: Metadata Standards
 We seek to provide a variable and modular .json metadata standard, to accomodate for the different types of certifications that exist and that may be emmited.
 
 ---
-## Metadate Structure
-### **General Data**
-| Key      | Definition |
-| ----------- | ----------- |
-| name      | the name of the certificate|
-| description   | a description of the certificate|
-| image | an URL of the image of the certifcate|
-| external_url | This is the URL that will appear below the asset's image and will allow users to leave and view the item on your site
+## Metadata Structure
+
+### General Data
+
+| Key              | Definition                                                                                                            |
+|:-----------------|:----------------------------------------------------------------------------------------------------------------------|
+| name             | Dame of the certificate.                                                                                              |
+| description      | Description of the certificate.                                                                                       | 
+| image            | URL of the image of the certifcate.                                                                                   |
+| external_url     | URL that will appear below the asset's image and will allow users to leave and view the item on your site.            | 
+| background_color | Background color of the certificate. Must be a six-character hexadecimal without a pre-pended #.                      |
+| attributes       | These are the attributes for the certificate. (see below).                                                            |
+
+### Atributes
+
+To make our certificates customizable, we also allow users to add custom "attributes" to the certificate metadata that add personalised information about each certification.
 
 
----
+| Key          | Definition                                             |
+|:-------------|:-------------------------------------------------------|
+| trait_type   | Name of the trait                                      |
+| value        | Value of the trait(can be an array of any type)        |
+| dysplay_type | Field indicating how you would like it to be displayed |
 
+### Dysplay Types
 
-### **Atributes**
-| Key      | Definition |
-| ----------- | ----------- |
-| trait_type |  is the name of the trait|
-| value | is the value of the trait|
-| dysplay_type| is a field indicating how you would like it to be displayed |
-
-**Dysplay Types**
-| trait_type | Definition | Image |
-| ----------- | ----------- | ---|
-| date | will show the date| |
-| prize | will show the the prize of the certificate | |
-
-
+| trait_type  | Definition                                       | Image |
+|:------------|:-------------------------------------------------|:------|
+| date        | will show the date                               |       |
+| award       | will show the the award given to the certificate |       |
 
 ### Example
 
@@ -60,13 +63,13 @@ We seek to provide a variable and modular .json metadata standard, to accomodate
   "external_url": "https://zerti.com.ar", 
   "attributes": [
       {
-          "dysplay_type": "date",
+          "display_type": "date",
           "trait_type": "Year", 
           "value": "2022"
       },
       {
-          "dysplay_type": "prize",
-          "trait_type": "Honors", 
+          "display_type": "award",
+          "trait_type": "Graduated with honors", 
           "value": "true"
       }
       {
