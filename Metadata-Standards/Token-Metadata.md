@@ -46,7 +46,7 @@ To make our certificates customizable, we also allow users to add custom "attrib
 | value        | Value of the trait(can be an array of any type)        |
 | display_type | Field indicating how you would like it to be displayed |
 
-### Dysplay Types
+### Display Types
 
 | trait_type  | Definition                                       | Image |
 |:------------|:-------------------------------------------------|:------|
