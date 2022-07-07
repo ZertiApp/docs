@@ -50,8 +50,8 @@ To make our certificates customizable, we also allow users to add custom "attrib
 
 | trait_type  | Definition                                       | Image |
 |:------------|:-------------------------------------------------|:------|
-| date        | will show the date                               |       |
-| award       | will show the the award given to the certificate |       |
+| date        | Will show as date                               |       |
+| award       | Will show as award  |       |
 
 ### Example
 
