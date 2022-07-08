@@ -2,7 +2,7 @@
 layout: default
 title: Token Metadata
 nav_order: 5
-parent: Metadata Standards
+parent: Our Token
 ---
 
 # Token Metadata

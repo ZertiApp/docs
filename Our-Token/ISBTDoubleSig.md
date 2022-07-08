@@ -1,6 +1,7 @@
 ---
 layout: default
 title: ISBT Double Sig
+parent: Our Token
 nav_order: 3
 ---
 
