@@ -19,7 +19,7 @@ parent: Metadata Standards
 
 ---
 ## Our objective
-We seek to provide a variable and modular .json metadata standard, to accomodate for the different types of certifications that exist and that may be emmited.
+We seek to provide a customizable .json metadata standard, to accomodate for the different types of certifications that exist and that may be emmited.
 
 ---
 ## Metadata Structure

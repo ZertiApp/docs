@@ -40,27 +40,25 @@ We will be calling acaemic institutes and/or enterprises wishing to emit certifi
         * __uint256 \_amount__
 
     
-    _Emited at fallback function._
+    -Emited at fallback function.
     
 * ### EntityAdded
     * __Params:__
         * __address indexed \_newEntity__ -> New validated entity
         * __address \_caledBy__ -> Contract(VoteProxy) that called the function.
 
-    _Emited at Vote finish, from a Vote clone, if result if 1._
+    - Emited at Vote finish, from a Vote clone, if result if 1.
 
 * ### ProxyCreated
     * __Params:__
         * __address indexed proxy__ -> Address of the newly created vote clone/instance.
-    
-    _Emited at Vote cloning._
+
+    - Emited at Vote cloning.
 
 ---
 # __Methods:__
 
-## __Main Functions:__
-
-### createVote(uint256 votingCost, uint256 minVotes, uint256 timeToVote)
+### createVote(votingCost, minVotes, timeToVote)
 
 __Params:__
 * __votingCost:__ should be N usd, info gathered in the front-end
@@ -78,6 +76,8 @@ __Reverts on:__
 * Invalid input: _votingCost == 0 or _minVotes < 2 or _timeToVote < 2
 * msg.sender already postulated
 
+__#external__
+
 ---
 
 ### rePostulationAllowance()
@@ -89,6 +89,8 @@ __Reverts on:__
 * Call by an already validated entity.
 * msg.value != reAlowanceValue
 
+__#external__
+
 ---
 ## __View and info-retrieving functions:__
 ### getImplAddr()
@@ -97,6 +99,8 @@ Get the current implementation Address
 __Returns:__
 * address of the Vote contract from which clones are created.
 
+__#external view__
+
 ---
 ### getAdmin()
 
@@ -104,8 +108,10 @@ Get the current administrator Address
 __Returns:__ 
 * address of contract admin.
 
+__#external view__
+
 ---
-### isEntity(address \_addr)
+### isEntity(\_addr)
 
 Check if a given address is a validated entity.
 
@@ -115,8 +121,9 @@ __Params:__
 __Returns:__ 
 * Boolean value stating if address is a validated entity. 
 
+__#external view__
 ___
-### getPostulated(address \_addr)
+### getPostulated(\_addr)
 
 Check if a given address has postulated.
 
@@ -126,9 +133,10 @@ __Params:__
 __Returns:__
 * Boolean value stating if address has postulated.
 
----
-## __Admin methods:__  
-### changeImpl(address \_newVoteImpl)
+__#external view__
+
+---  
+### changeImpl(\_newVoteImpl)
 
 __Params:__ 
 * __\_newVoteImpl__ address of the new Vote implementation
@@ -139,8 +147,11 @@ Changes the address from which vote contracts are cloned.
 __Reverts on:__
 * Call by everyone if not Admin.
 
+
+__#external(adm)__
+
 ---
-### changeAlowanceValue(uint256 \_newValue)
+### changeAlowanceValue(\_newValue)
 
 __Params:__
 * __\_newValue__ new amount to pay when repostulating.
@@ -152,3 +163,5 @@ Changes the value of reAlowanceValue.
 __Reverts on:__
 * call by everyone if not Admin.
 * '_newValue' equal to cero or equal to previous value.
+
+__#external(adm)__

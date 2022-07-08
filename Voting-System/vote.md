@@ -45,23 +45,21 @@ When a vote finishes, the pool is distributed based on majoritarian vote. This s
         * __address indexed userAddr__ --> address of the voter
         * __uint8 vote__ --> (0- Vote Against ; 1-Vote in Favour)
 
-    _Emmited at each sendVote() call (See sendVote)._
+    - Emmited at each sendVote() call (See sendVote).
 
 * ### VoteFinished
     * __Params:__
         * __address indexed entity__ --> address of the entity being voted
         * __uint8 vote__ --> (0- Vote lost, entity is not validated ; 1- Vote win, entity is now validated and can emit certificates)
 
-    _emited at voteFinalization()(See voteFinalization)._
+    - Emited at voteFinalization() (See voteFinalization).
 
     
 ---
 
 # __Methods__
 
-## __Main Functions:__
-
-### initialize(uint256 \_votingCost, uint256 \_minVotes, uint256 \_timeToVote, address \_sender)
+### initialize(\_votingCost, \_minVotes, \_timeToVote, \_sender)
 
 __Params:__
 * __votingCost:__ should be N usd, info gathered in the front-end
@@ -74,10 +72,12 @@ __Reverts on:__
 * Call by everyone, if not VoteFactory.
 
 
-init function, given that cloned contracts cant have constructors. Only callable by VoteFactory contract. Only callable once(It is like a constructor)
+init function, given that cloned contracts cant have constructors. Only callable by VoteFactory contract. Only callable once(It is like a constructor)  
+
+__#external__
 
 ---
-### sendVote(uint8 \_userVote)
+### sendVote(\_userVote)
 
 __Params:__
 * __\_userVote:__ users vote obtained in front-end. 1 - In favor vote; 0 - Opposing vote.
@@ -95,13 +95,16 @@ Receives ether and stores user's vote and address in tree structure.
 Sets that user has voted.  
 Emits a {UserVoted} event.
 
+__#external__
+
 ---
-## __View and Info-Retrieving functions:__
 ### getWhoBeingVoted()
 Get entity that is being voted.
 
 __Returns:__
 * address of entity being voted
+
+__#external view__
 
 ---
 ### getData()
@@ -111,6 +114,7 @@ Get IPFS Link to entity info.
 __Returns:__
 * string, IPFS Link.
 
+__#external view__
 
 ---
 ### getTotalDeposit()
@@ -119,16 +123,19 @@ Get contract balance
 __Returns:__
 * uint256, balance of the contract(IN GWEI).
 
+__#external view__
 
 ---
-### getUserVoted(address _addr)
+### getUserVoted(_addr)
 Check if address has already voted
 
 __Params:__
 * __\_addr__ address to check.
 
 __Returns:__
-* boolean value stating if selected address has already voted.
+* boolean value stating if `_addr` has already voted.
+
+__#external view__
 
 
 ---
@@ -138,6 +145,7 @@ Check if contract is initialized
 __Returns:__
 * boolean value stating if contract is initiliazed
 
+__#external view__
 
 ---
 ### getVotesAgainst()
@@ -146,6 +154,7 @@ Check against votes
 __Returns:__
 * uint256, number of votes against.
 
+__#external view__
 
 ---
 ### getVotesInFavour()
@@ -154,6 +163,7 @@ Check in favour votes
 __Returns:__
 * uint256, number of votes in favour.
 
+__#external view__
 
 ---
 ### getVotingCost()
@@ -162,6 +172,7 @@ get voting cost, if 0, voting closed
 __Returns:__
 * uint256, neccesary ethers to stake/vote(IN GWEI)
 
+__#external view__
 
 ---
 ### getEndTime()
@@ -170,22 +181,33 @@ Get endTime timestamp(In Unix Time!)
 __Returns:__
 * uint256, block.timestamp at init + timeToVote days.
 
+__#external view__
 
 ---
-## __Internal Functions:__
 ### voteFinalization()
 
 Sets vote result and calls distributeVotePool() function
 
 internal and should only be called by an Admin contract.
-Emits a {VoteFinished} event; and calls distributePool().
+Emits a {VoteFinished} event; and calls distributePool(). (See distributePool)
 
 __Reverts On:__
 * Voting not finished
 
-### distributePool()
+__#internal__
+
+---
+
+### distributePool(_amount, _votersResult, _resultLen)
 Transfers ether to vote winners.
 Distributes reward system pool between winners(majority).  
 
+__Params:__
+* __\_amount:__ Ethers to be given to each voter.
+* __\__votersResult:__ Array of addresses, winners of the votation.
+* __\_resultLen:__ number of vote Winners.
+
 __Reverts On:__
 * Voting not finished
+
+__#internal__
