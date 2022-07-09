@@ -6,6 +6,7 @@ nav_order: 3
 ---
 
 # ISBT
+{: .no_toc }
 
 Interface of the ISBTDoubleSig contract.
 
