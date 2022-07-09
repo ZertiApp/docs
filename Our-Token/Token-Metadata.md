@@ -19,6 +19,7 @@ parent: Our Token
 
 ---
 ## Our objective
+
 We seek to provide a customizable .json metadata standard, to accomodate for the different types of certifications that exist and that may be emmited.
 
 ---
@@ -28,7 +29,7 @@ We seek to provide a customizable .json metadata standard, to accomodate for the
 
 | Key              | Definition                                                                                                            |
 |:-----------------|:----------------------------------------------------------------------------------------------------------------------|
-| name             | Dame of the certificate.                                                                                              |
+| name             | Name of the certificate.                                                                                              |
 | description      | Description of the certificate.                                                                                       | 
 | image            | URL of the image of the certifcate.                                                                                   |
 | external_url     | URL that will appear below the asset's image and will allow users to leave and view the item on your site.            | 

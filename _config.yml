@@ -4,7 +4,7 @@ url: "https://docs.zerti.com.ar"
 remote_theme: just-the-docs/just-the-docs
 
 # Footer content
-footer_content: "2022 Zerti <a href=\"https://zerti.com.ar\">-Go to the app</a>
+footer_content: "2022 Zerti<a href=\"https://zerti.com.ar\"> - Go to the app</a>
 <br>All of our contracts are open-source and under the MIT License.<br>
 Matias Arazi & Lucas Grasso Ramos"
 

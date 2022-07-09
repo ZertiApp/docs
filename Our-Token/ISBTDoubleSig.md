@@ -1,14 +1,14 @@
 ---
 layout: default
-title: ISBT Double Sig
+title: ISBTDS.sol
 parent: Our Token
 nav_order: 3
 ---
 
-# ISBT
+# ISBT.sol
 {: .no_toc }
 
-Interface of the ISBTDoubleSig contract.
+Interface of the ISBTDS contract.
 
 
 {: .no_toc }
@@ -30,7 +30,7 @@ Interface of the ISBTDoubleSig contract.
     * __Params:__
         * __address indexed \_from__
         * __address indexed \_to__ 
-        * __uint256 id__ 
+        * __uint256 indexed \_id__ 
 
     - Emitted when `_id` token is transferred from `_from` to `_to`.  
     - If `_from` is the cero address, a token is being minted. 
@@ -40,7 +40,7 @@ Interface of the ISBTDoubleSig contract.
 * ### TokenClaimed
     * __Params:__
         * __address indexed \_newOwner__
-        * __uint256 id__ 
+        * __uint256 indexed \_id__ 
 
     - Emitted when `_newOwner` claims or rejects pending `_tokenId`.  
     - If `_newOwner` is the cero address, token was rejected.
