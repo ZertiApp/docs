@@ -27,7 +27,7 @@ Main SBTDS contract, used for our badge/certification standard.
 
 # Events
 
-* _See [ISBTDS-Events](https://docs.zerti.com.ar/Our-Token/ISBTDoubleSig.html#events)_
+* _See [ISBTDS-Events](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#events)_
 
 ---
 
@@ -35,7 +35,7 @@ Main SBTDS contract, used for our badge/certification standard.
 
 ### uri()
 
-* _See [ISBTDS-uri()](https://docs.zerti.com.ar/Our-Token/ISBTDoubleSig.html#uri)_
+* _See [ISBTDS-uri()](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#uri)_
 
 __#external view__
 
@@ -43,7 +43,7 @@ __#external view__
 
 ### uriOf(_id)
 
-* _See [ISBTDS-uriOf](https://docs.zerti.com.ar/Our-Token/ISBTDoubleSig.html#uriof_id)_
+* _See [ISBTDS-uriOf](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#uriof_id)_
 
 __#external view__
 
@@ -51,7 +51,7 @@ __#external view__
 
 ### ownerOf(_id)
 
-* _See [ISBTDS-uriOf](https://docs.zerti.com.ar/Our-Token/ISBTDoubleSig.html#ownerof_id)_
+* _See [ISBTDS-uriOf](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#ownerof_id)_
 
 __#external view__
 
@@ -59,7 +59,7 @@ __#external view__
 
 ### amountOf(_id)
 
-* _See [ISBTDS-amountOf](https://docs.zerti.com.ar/Our-Token/ISBTDoubleSig.html#amountof_id)_
+* _See [ISBTDS-amountOf](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#amountof_id)_
 
 __#external view__
 
@@ -67,7 +67,7 @@ __#external view__
 
 ### tokensFrom(_from)
 
-* _See [ISBTDS-tokensFrom](https://docs.zerti.com.ar/Our-Token/ISBTDoubleSig.html#tokensfrom_from)_
+* _See [ISBTDS-tokensFrom](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#tokensfrom_from)_
 
 __#external view__
 
@@ -75,7 +75,7 @@ __#external view__
 
 ### pendingFrom(_from)
 
-* _See [ISBTDS-pendingFrom](https://docs.zerti.com.ar/Our-Token/ISBTDoubleSig.html#pendingfrom_from)_
+* _See [ISBTDS-pendingFrom](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#pendingfrom_from)_
 
 __#external view__
 
@@ -85,7 +85,7 @@ __#external view__
 
 _Calls #internal \_transfer(`_from(msg.sender)`, `_id`, `_to`)._
 
-* _See [ISBTDS-transfer](https://docs.zerti.com.ar/Our-Token/ISBTDoubleSig.html#transfer_id-_to)_
+* _See [ISBTDS-transfer](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#transfer_id-_to)_
 
 __#external__
 
@@ -96,7 +96,7 @@ __#external__
 _Calls #internal \_transferBatch(`_from(msg.sender)`, `_id`, `_to[]`)._
 
 
-* _See [ISBTDS-transferBatch](https://docs.zerti.com.ar/Our-Token/ISBTDoubleSig.html#transferbatch_id-_to)_
+* _See [ISBTDS-transferBatch](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#transferbatch_id-_to)_
 
 __#external__
 
