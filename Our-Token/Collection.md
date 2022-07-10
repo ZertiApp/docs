@@ -2,7 +2,7 @@
 layout: default
 title: Collection.sol
 parent: Our Token
-nav_order: 3
+nav_order: 4
 ---
 
 # Collection.sol

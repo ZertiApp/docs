@@ -2,10 +2,10 @@
 layout: default
 title: ISBTDS.sol
 parent: Our Token
-nav_order: 3
+nav_order: 2
 ---
 
-# ISBT.sol
+# ISBTDS.sol
 {: .no_toc }
 
 Interface of the ISBTDS contract.
