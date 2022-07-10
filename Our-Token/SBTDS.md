@@ -83,14 +83,6 @@ __#external view__
 
 ### transfer(_id,_to)
 
-* _See [ISBTDS-transfer](https://docs.zerti.com.ar/Our-Token/ISBTDoubleSig.html#transfer_id-_to)_
-
-__#external view__
-
---- 
-
-### transfer(_id,_to)
-
 _Calls #internal \_transfer(`_from(msg.sender)`, `_id`, `_to`)._
 
 * _See [ISBTDS-transfer](https://docs.zerti.com.ar/Our-Token/ISBTDoubleSig.html#transfer_id-_to)_
