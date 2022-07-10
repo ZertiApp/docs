@@ -105,11 +105,11 @@ __#external__
 ### _mint(_account,_data)
 
 Mints(creates) a token.
-Minter must be an entity to mint.
+Minter must be an entity to mint. (See [IVF.sol](https://docs.zerti.com.ar/Voting-System/IVF.html))
 
 __Params:__
 * __\_account:__ address who will mint the token
-* __\_data:__ URI to IPFS with data of the token(see [Token-Metadata](https://docs.zerti.com.ar/Our-Token/Token-Metadata.html))
+* __\_data:__ URI to IPFS with data of the token(See [Token-Metadata](https://docs.zerti.com.ar/Our-Token/Token-Metadata.html))
 
 __#internal__
 
