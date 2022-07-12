@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Zert Metadata
+title: Zert Metadata Standard
 nav_order: 3
 parent: Zert
 ---
