@@ -5,8 +5,7 @@ remote_theme: just-the-docs/just-the-docs
 
 # Footer content
 footer_content: "2022 Zerti<a href=\"https://zerti.com.ar\"> - Go to the app</a>
-<br>All of our contracts are open-source and under the MIT License.<br>
-Matias Arazi & Lucas Grasso Ramos"
+<br>All of our contracts are open-source and under the MIT License."
 
 
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
