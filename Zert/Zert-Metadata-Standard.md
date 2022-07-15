@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Token Metadata
+title: Zert Metadata Standard
 nav_order: 3
-parent: Our Token
+parent: Zert
 ---
 
 # Token Metadata

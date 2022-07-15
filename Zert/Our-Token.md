@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Our Token
+title: Zert
 nav_order: 2
 has_children: true
-permalink: /Our-Token
+permalink: /Zert
 ---
 
 # Metadata Standards

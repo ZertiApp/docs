@@ -1,7 +1,7 @@
 ---
 layout: default
 title: SBTDS.sol
-parent: Our Token
+parent: Zert
 nav_order: 1
 ---
 

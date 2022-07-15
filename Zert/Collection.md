@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Collection.sol
-parent: Our Token
+parent: Zert
 nav_order: 4
 ---
 
