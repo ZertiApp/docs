@@ -75,7 +75,7 @@ To make our certificates customizable, we also allow users to add custom "attrib
         },
         {
             "trait_type": "Extracurricular activities",
-            "value": ["Theatre Club", "Debate Club" , "Voleyball Club"],
+            "value": ["Theatre Club", "Debate Club" , "Voleyball Club"]
         }
     ]
   }
