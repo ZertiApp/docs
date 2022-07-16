@@ -81,40 +81,26 @@ __#external view__
 
 --- 
 
-### transfer(_id,_to)
+### mint(_data,_to)
 
-_Calls #internal \_transfer(`_from(msg.sender)`, `_id`, `_to`)._
+_Calls #internal \_mint(`_from(msg.sender)`, `_data`, `_to`)._
 
-* _See [ISBTDS-transfer](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#transfer_id-_to)_
-
-__#external__
-
---- 
-
-### transferBatch(_id,_to[])
-
-_Calls #internal \_transferBatch(`_from(msg.sender)`, `_id`, `_to[]`)._
-
-
-* _See [ISBTDS-transferBatch](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#transferbatch_id-_to)_
+* _See [ISBTDS-mint](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#mint_data-_to)_
 
 __#external__
 
 --- 
 
-### _mint(_account,_data)
+### mintBatch(_id,_to[])
 
-Mints(creates) a token.
-Minter must be an entity to mint. (See [IVF.sol](https://docs.zerti.com.ar/Voting-System/IVF.html))
+_Calls #internal \_mintBatch(`_from(msg.sender)`, `_data`, `_to[]`)._
 
-__Params:__
-* __\_account:__ address who will mint the token
-* __\_data:__ URI to IPFS with data of the token(See [Token-Metadata](https://docs.zerti.com.ar/Our-Token/Token-Metadata.html))
 
-__#internal__
+* _See [ISBTDS-mintBatch](https://docs.zerti.com.ar/Our-Token/ISBTDS.html#mintbatch_data-_to)_
+
+__#external__
 
 --- 
-
 ### claim(_id)
 
 _Calls #internal \_claim(`_account(msg.sender)`, `_id`)._
