@@ -130,12 +130,9 @@ __#external view__
 
 ---
 
-### mint(_data, _to)
+### transfer(_id, _to)
 
-Mints(creates) a token and transfers it token from `_from` to `_to`.
-
-__Params:__
-- __\_data:__ URI to IPFS with data of the token(See [Token-Metadata](https://docs.zerti.com.ar/Our-Token/Token-Metadata.html))
+Transfers `_id` token from `_from` to `_to`.
 
 __Requirements:__
 - `_from` cannot be the zero address.
@@ -153,9 +150,11 @@ __#external__
 
 ---
 
-### mintBatch(_data, _to[])
+### transferBatch(_id, _to[])
 
-Mints(creates) a token and transfers it to every address at `_to[]`
+Transfers `_id` tokens from `_from` to every address at `_to[]`.   
+Calls _transfer(`_id`, `_from`, `_to[i]`) len(_to) times.  
+Emits a {TokenTransfer} event _to[].length times. 
 
 __Requirements:__
 * See {transfer}  
