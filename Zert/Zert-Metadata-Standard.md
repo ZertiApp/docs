@@ -58,25 +58,25 @@ To make our certificates customizable, we also allow users to add custom "attrib
 
 ```json
 {
-  "name": "Epic certificate",
-  "description": "This is an amazing certificate!", 
-  "image": "https://cdn.pixabay.com/photo/2020/07/01/14/30/zebra-5359826_1280.jpg",
-  "external_url": "https://zerti.com.ar", 
-  "attributes": [
-      {
-          "display_type": "date",
-          "trait_type": "Year", 
-          "value": "2022"
-      },
-      {
-          "display_type": "award",
-          "trait_type": "Graduated with honors", 
-          "value": "true"
-      }
-      {
-          "trait_type": "Extracurricular activities",
-          "value": ["Theatre Club", "Debate Club" , "Voleyball Club"]
-      }
-  ]
-}
+    "name": "Epic certificate",
+    "description": "This is an amazing certificate!", 
+    "image": "https://cdn.pixabay.com/photo/2020/07/01/14/30/zebra-5359826_1280.jpg",
+    "external_url": "https://zerti.com.ar", 
+    "attributes": [
+        {
+            "display_type": "date",
+            "trait_type": "Year", 
+            "value": "2022"
+        },
+        {
+            "display_type": "award",
+            "trait_type": "Graduated with honors", 
+            "value": "true"
+        },
+        {
+            "trait_type": "Extracurricular activities",
+            "value": ["Theatre Club", "Debate Club" , "Voleyball Club"],
+        }
+    ]
+  }
 ```
